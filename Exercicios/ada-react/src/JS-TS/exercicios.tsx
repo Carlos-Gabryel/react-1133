@@ -8,13 +8,13 @@ function sumArrayElements(arr: number[]): number {
 console.log(sumArrayElements(numbers)); // Output: 15
 
 // Exercício 2: Objetos e Interfaces
-interface Student {
+interface Student1 {
   name: string;
   age: number;
   course: string;
 }
 
-const student: Student = {
+const student: Student1 = {
   name: "John Doe",
   age: 20,
   course: "Computer Science",
@@ -126,7 +126,7 @@ const books: { title: string; author: string; pages: number }[] = [
   { title: "Book 3", author: "Author 3", pages: 250 },
 ];
 
-function getBooksMoreThan200Pages(arr: { pages: number }[]): { title: string; author: string; pages: number }[] {
+function getBooksMoreThan200Pages(arr: { title: string; author: string; pages: number }[]): { title: string; author: string; pages: number }[] {
   return arr.filter((book) => book.pages > 200);
 }
 
@@ -167,7 +167,9 @@ const students2: { name: string; age: number; average: number }[] = [
   { name: "Bob", age: 21, average: 75 },
 ];
 
-function getStudentWithHighestAverage(arr: { average: number }[]): string {
+function getStudentWithHighestAverage(arr: {
+  name: string; average: number 
+}[]): string {
   const highestAverage = Math.max(...arr.map((student) => student.average));
   const student = arr.find((student) => student.average === highestAverage);
   return student ? student.name : "";
@@ -278,7 +280,9 @@ const cars: { model: string; color: string; price: number }[] = [
   { model: "Car 3", color: "Green", price: 20000 },
 ];
 
-function getModelOfMostExpensiveCar(arr: { price: number }[]): string {
+function getModelOfMostExpensiveCar(arr: {
+  model: string; price: number 
+}[]): string {
   const highestPrice = Math.max(...arr.map((car) => car.price));
   const car = arr.find((car) => car.price === highestPrice);
   return car ? car.model : "";
